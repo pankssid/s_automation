@@ -31,7 +31,7 @@ def main():
         # Create a new DataFrame with selected columns
         selected_df = df[predefined_columns]
 
-        selected_df.colums = [
+        selected_df.columns = [
             "Order ID",  "Created At", "Status", "Customer Name",
             "Customer Mobile", "Payment Method", "Order Total", "AWB Code",
             "EDD", "Delayed Reason", "Order Delivered Date"
