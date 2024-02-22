@@ -24,12 +24,21 @@ def main():
             "EDD", "Delayed Reason", "Order Delivered Date"
         ]
 
+        
         # Allow users to select columns to keep
         # selected_columns = st.multiselect("Select columns to keep", predefined_columns)
 
         # Create a new DataFrame with selected columns
         selected_df = df[predefined_columns]
 
+        selected_df.colums = [
+            "Order ID",  "Created At", "Status", "Customer Name",
+            "Customer Mobile", "Payment Method", "Order Total", "AWB Code",
+            "EDD", "Delayed Reason", "Order Delivered Date"
+        ]
+
+        selected_df=selected_df[~selected_df.isin('CANCELED')].reset_index(drop=True)
+        
         # Display the modified DataFrame
         st.write("DataFrame with selected columns:")
         st.write(selected_df)
