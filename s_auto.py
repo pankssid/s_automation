@@ -37,7 +37,7 @@ def main():
             "EDD", "Delayed Reason", "Order Delivered Date"
         ]
 
-        selected_df=selected_df[~selected_df.isin('CANCELED')].reset_index(drop=True)
+        selected_df=selected_df[~selected_df.Status.isin('CANCELED')].reset_index(drop=True)
         
         # Display the modified DataFrame
         st.write("DataFrame with selected columns:")
